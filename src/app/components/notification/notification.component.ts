@@ -1,5 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
+
 @Component({
   selector: 'app-notification',
   templateUrl: './notification.component.html',
@@ -15,7 +18,7 @@ export class NotificationComponent implements OnInit {
 
   @Output() delete = new EventEmitter <string>() 
 
-  constructor() { }
+  constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {
   }
@@ -30,6 +33,8 @@ export class NotificationComponent implements OnInit {
    if (event.target.id === 'popup') return;
    if (this.popover) { this.popover = false; return; }
    this.unread = false;
+
+   this.modalService.open('Hello')
 
    console.log('open up the noti') // call the modal here
   }

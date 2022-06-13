@@ -1,0 +1,15 @@
+<main class="notifications container-sm">
+    <header>
+        <h1 class="pragmatica black-font fw-normal font-22 mb-4 pb-3">Notification Center</h1>
+        <h6 class="pragmatica blue-font fw-bolder font-14 mb-0">MESSAGES</h6>
+        <hr class="mt-1">
+    </header>
+    <body id="notifContainer" class="inner-container">
+        <article *ngFor="let notification of notifications; index as i">
+            <app-notification (delete)="deleteHandler($event)" [notification]="notification" [unread]="unread_arr[i]" id="target{{i+1}}"></app-notification>
+        </article>
+    </body>
+</main>
+<footer>
+    <!-- <button (click)="showHandler()" class="">Show More</button> -->
+</footer>

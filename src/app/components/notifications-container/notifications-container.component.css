@@ -1,0 +1,20 @@
+.notifications {
+    max-width: max-content;
+}
+.pragmatica {
+    font-family: pragmatica, sans-serif;
+    font-style: normal;
+    font-weight: 200;
+}
+.black-font {
+    color: #2b2b2b;
+}
+.blue-font {
+    color: #00a2df;
+}
+.font-22 {
+    font-size: 22px;
+}
+.font-14 {
+    font-size: 14px;
+}

@@ -1,0 +1,90 @@
+<section class="my-1">     
+    <div [ngClass]="unread ? 'container-fluid container-bg container-t' : 'container-fluid container-bg-read container-t'">
+        <div class="row align-items-center">
+            
+            <div class="col-md-auto">
+                <div [ngClass]="unread ? 'blue-dot' : 'white-dot'"></div>
+            </div>
+
+            <div class="col-md-auto col ps-0">
+                <div class="img-container p-0">
+                    <img src="../../../assets/costa.png" />
+                </div>
+            </div>
+            
+            <div class="col-md-auto col">
+                <div class="d-flex">
+                    <img class="type" src="../../../assets/boat.svg" />
+                    <div class="px-1">
+                        <div class="font-12 gray-font fw-normal">Booking</div>
+                    </div>
+                    <div class="vertical-break m-1"></div>
+                    <div>
+                        <div class="font-12 blue-font px-1 fw-normal">HM-2205260000010</div>
+                    </div>
+                </div>
+                <div class="font-14 black-font fw-normal me-3">
+                    John Doe from BrightStar sent a message to you
+                </div>
+            </div>
+            
+            <div class="col-md-auto col">
+                <div class="vr ms-5"></div>
+            </div>
+            
+            <div class="col-md-auto">
+                <div class="d-flex">
+                    <img class="flag mt-1" src="../../../assets/pak.svg" />
+                    <div class="ms-2 overflow-visible">
+                        <p class="font-12 black-font fw-normal">PK KHI</p>
+                        <p class="font-10 gray-font fw-normal">Pakistan</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-auto col">
+                <div class="d-flex">
+                    <div class="dotted"></div>
+                    <img class="arrow" src="../../../assets/farrow.svg" />
+                </div>
+            </div>
+
+            <div class="col-md-auto col">
+                <div class="d-flex">
+                    <img class="flag mt-1" src="../../../assets/uae.svg" />
+                    <div class="ms-2 overflow-visible">
+                        <p class="font-12 black-font fw-normal">AE JEA</p>
+                        <p class="font-10 gray-font fw-normal">United Arab Emirates</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-auto col pe-0 ps-auto">
+                <p class="gray-font font-12 mb-3 fw-normal">9min</p>
+            </div>
+
+            <div class="col-md-auto col ps-0 pe-auto">
+                <ng-template #popContent class="shadow-sm">
+                    <div class="d-flex">
+                        <img class="type me-1" src="../../../assets/delete.svg" />
+                        <div>
+                            <p class="font-12 fw-normal gray-font">Delete</p>
+                            <p class="font-10 fw-normal gray-font">Delete this notification</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="d-flex">
+                        <img class="type me-1" src="../../../assets/noti-off.svg" />
+                        <div>
+                            <p class="font-12 fw-normal gray-font">Turn off</p>
+                            <p class="font-10 fw-normal gray-font">Stop seeing updates from this booking</p>
+                        </div>
+                    </div>
+                </ng-template>
+                <button [ngbPopover]="popContent" id="popup" class="popup-container mb-3 ps-0">
+                    <img class="popup" src="../../../assets/3dots.svg" />
+                </button>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,99 @@
+<section id="notification" class="my-1" (click)="clickHandler($event)">     
+    <div [ngClass]="unread ? 'container-fluid container-bg container-t position-relative' : 'container-fluid fade-out container-bg-read container-t position-relative'">
+        <div class="row align-items-center">
+            
+            <div class="col-sm-7">
+                <div class="d-flex align-items-center">
+                    <div class="pe-2">
+                        <div [ngClass]="unread ? 'blue-dot' : 'white-dot'"></div>
+                    </div>
+                    <div class="col-1 ps-0 pe-3 me-1">
+                        <div class="img-container p-0">
+                            <img src="../../../assets/MSC.png" />
+                        </div>
+                    </div>
+                    <div class="col-10 ps-4 py-2 mt-1">
+                        <div class="d-flex">
+                            <img class="type" src="../../../assets/boat.svg" />
+                            <div class="px-1">
+                                <div class="font-12 gray-font fw-normal">Booking</div>
+                            </div>
+                            <div class="vertical-break m-1"></div>
+                            <div>
+                                <div (click)="$event.stopPropagation()" class="font-12 blue-font px-1 fw-normal"><a class="hyperlink font-12 blue-font px-1 fw-normal" href="javascript:;" (click)="bookingIdHandler('https://qahubatco.hashmove.com/booking-detail/MjAxMDJ8MjYxfFNFQXxHVUVTVA%3D%3D/Qk9PS0lORzk5ODU4')">HM-2205260000010</a></div>
+                            </div>
+                        </div>
+                        <div class="font-14 black-font fw-normal">
+                            John Doe from BrightStar sent a message to you
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4 py-2">
+                <div class="d-flex pt-2 mt-1">
+                    <div class="col-1 resize">
+                        <div class="vr"></div>
+                    </div>
+                    <div class="col-md-5"> 
+                        <div class="d-flex country-container">
+                            <img class="flag mt-1" src="../../../assets/pak.svg" />
+                            <div class="ms-2">
+                                <p class="font-12 black-font fw-normal text-nowrap">PK KHI</p>
+                                <p class="font-10 gray-font fw-normal">Pakistan</p>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="col-2 me-2 mt-2 pt-1 arrow-p">
+                        <div class="d-flex">
+                            <div class="dotted"></div>
+                            <img class="arrow" src="../../../assets/farrow.svg" />
+                        </div>
+                    </div>
+        
+                    <div class="col-md-6 pe-2">
+                        <div class="d-flex country-container">
+                            <img class="flag mt-1" src="../../../assets/uae.svg" />
+                            <div class="ms-2">
+                                <p class="font-12 black-font fw-normal text-nowrap">AE JEA</p>
+                                <p class="font-10 gray-font fw-normal">United Arab Emirates</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-1 top-right">
+                <div class="d-flex pt-2 justify-content-end sm-padding me-1">
+                    <div class="col-7 min-margin">
+                        <p class="gray-font font-12 text-end fw-normal">9min</p>
+                    </div>
+                    <div class="col-1" (click)="$event.stopPropagation()">
+                        <ng-template #popContent class="shadow-sm">
+                            <div class="d-flex" (click)="deleteNotification()">
+                                <img class="type me-1" src="../../../assets/delete.svg" />
+                                <div>
+                                    <p class="font-12 fw-normal gray-font">Delete</p>
+                                    <p class="font-10 fw-normal gray-font">Delete this notification</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="d-flex" (click)="turnOffHandler()">
+                                <img class="type me-1" src="../../../assets/noti-off.svg" />
+                                <div>
+                                    <p class="font-12 fw-normal gray-font">Turn off</p>
+                                    <p class="font-10 fw-normal gray-font">Stop seeing updates from this booking</p>
+                                </div>
+                            </div>
+                        </ng-template>
+                        <button (click)="isOpen()" [ngbPopover]="popContent" class="popup-container mb-4 ps-0" placement="bottom-right">
+                            <img id="popup" class="popup mb-1" src="../../../assets/3dots.svg" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
